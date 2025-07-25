@@ -21,6 +21,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/assets/task-management-logo.png",
               {
                 "glob": "**/*",
                 "input": "public"
