@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./header/header";
 import { UserComponent } from "./user/user";
@@ -8,19 +9,19 @@ import { TasksComponent } from './tasks/tasks';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, UserComponent, UserComponent, TasksComponent],
+  imports: [RouterOutlet, HeaderComponent, UserComponent, TasksComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   users = DUMMY_USERS;
-  selectedUserID: string | undefined;
+  selectedUserId: string | undefined;
 
   get selectedUser() {
-    return this.users.find((user) => user.id === this.selectedUserID)!;
+    return this.users.find((user) => user.id === this.selectedUserId);
   }
 
   onSelectedUser(id: string) {
-    this.selectedUserID = id;
+    this.selectedUserId = id;
   }
 }
